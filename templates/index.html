@@ -2,11 +2,13 @@
 <html>
     <head>
         <title>Simple Snakes</title>
-        <link rel="stylesheet" href="{{url_for('static', 'filename=style.css')}}">
-        <script src="{{url_for('static', 'filename=script.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <script src="{{url_for('static', filename='script.js')}}"></script>
     </head>
     <body>
-        <p>Hello World</p>
+        <div id="snake"></div>
+        <div id="grass"></div>
     </body>
 
 </html>
+
