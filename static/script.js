@@ -8,11 +8,22 @@ const gridSize = 20;
 
 let snake = [{x:5, y:5}];
 
-let food = {
-    x: Math.floor(Math.random()*(canvas.width/gridSize)),
-    y: Math.floor(Math.random()*(canvas.height/gridSize))
-};
+function makeFood(){
+    let newFood;
+    do {
+        newFood = {
+            x: Math.floor(Math.random() * (canvas.width / gridSize)),
+            y: Math.floor(Math.random() * (canvas.height / gridSize))
+        };
+    }
+    while (
+        snake.some(s => s.x === newFood.x && s.y === newFood.y)
+    );
 
+    return newFood;
+}
+
+food = makeFood();
 
 
 let dx = 0;
@@ -36,7 +47,15 @@ function update() {
     };
     
     snake.unshift(head);
-    snake.pop();
+
+    if (head.x === food.x && head.y === food.y) {
+        food = {
+            x: Math.floor(Math.random() * (canvas.width / gridSize)),
+            y: Math.floor(Math.random() * (canvas.height / gridSize))
+        };
+    } else {
+        snake.pop();
+    }
 
 }
 
