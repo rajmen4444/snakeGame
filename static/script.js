@@ -8,6 +8,13 @@ const gridSize = 20;
 
 let snake = [{x:5, y:5}];
 
+let food = {
+    x: Math.floor(Math.random()*(canvas.width/gridSize)),
+    y: Math.floor(Math.random()*(canvas.height/gridSize))
+};
+
+
+
 let dx = 0;
 let dy = 0;
 let started = false;
@@ -47,6 +54,14 @@ function draw() {
             gridSize
         );
     });
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(
+    food.x * gridSize,
+    food.y * gridSize,
+    gridSize,
+    gridSize
+    );
 }
 
 document.addEventListener("keydown", (e) => {
