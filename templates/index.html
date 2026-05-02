@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Simple Snakes</title>
+        <title>Simple Snake Game</title>
         <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-        <script src="{{url_for('static', filename='script.js')}}"></script>
     </head>
     <body>
-        <div id="grass"></div>
+        <h1>Simple Snake Game</h1>
+
+        <div id="gameCanvas">
+            <canvas id="cnvs"></canvas>
+        </div>
+        
+        
+        <script src="{{url_for('static', filename='script.js')}}"></script>
     </body>
 
 </html>
